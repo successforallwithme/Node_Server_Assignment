@@ -6,483 +6,681 @@ const app = http.createServer((req, res) => {
 
     if (url.toLowerCase() === '/home') {
         res.writeHead(200, { "Content-Type": "text/html" });
-        res.write(`<html lang="en">
+        res.write(`<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Innovate LLC - Home</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <title>Home Page</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
+      * {
         margin: 0;
         padding: 0;
-        background-color: #f4f4f9;
-        color: #333;
-      }
-      header {
-        background-color: #333;
-        color: white;
-        padding: 1rem 0;
-        text-align: center;
-      }
-      nav {
-        display: flex;
-        justify-content: center;
-        background-color: #444;
-      }
-      nav a {
-        color: white;
-        padding: 14px 20px;
-        text-decoration: none;
-        text-align: center;
-      }
-      nav a:hover {
-        background-color: #555;
-      }
-      .container {
-        padding: 2rem;
-      }
-      .hero {
-        text-align: center;
-        padding: 4rem 1rem;
-        background-color: #5b6c8c;
-        color: white;
-      }
-      .hero h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
-      .services {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin-top: 2rem;
-      }
-      .service-card {
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin: 1rem;
-        padding: 1.5rem;
-        width: 300px;
-        text-align: center;
-      }
-      footer {
-        text-align: center;
-        padding: 1rem 0;
-        background-color: #333;
-        color: white;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1vh;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Innovate LLC</h1>
-    </header>
-
-    <nav>
-      <a href="/home">Home</a>
-      <a href="/about">About Us</a>
-      <a href="/contact">Contact</a>
-    </nav>
-
-    <div class="hero">
-      <h1>Driving the Future of Technology</h1>
-      <p>We create innovative solutions for the modern world.</p>
-    </div>
-
-    <div class="container">
-      <h2 style="text-align: center">Our Services</h2>
-      <div class="services">
-        <div class="service-card">
-          <h3>Web Development</h3>
-          <p>
-            Building responsive and dynamic websites tailored to your needs.
-          </p>
-        </div>
-        <div class="service-card">
-          <h3>Mobile App Development</h3>
-          <p>
-            Creating intuitive and powerful mobile applications for iOS and
-            Android.
-          </p>
-        </div>
-        <div class="service-card">
-          <h3>Cloud Solutions</h3>
-          <p>
-            Leveraging the cloud to scale your business and improve efficiency.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <footer>
-      <p>
-        <li><i class="ri-copyright-line"></i></li>
-        2024 Innovate LLC. All rights reserved.
-      </p>
-    </footer>
-  </body>
-</html>
-`);
-        res.end();
-
-    }
-    else if (url.toLowerCase() === '/about') {
-        res.writeHead(200, { "Content-Type": "text/html" });
-        res.write(`<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Innovate LLC - About Us</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f9;
-        color: #333;
-      }
-      header {
-        background-color: #333;
-        color: white;
-        padding: 1rem 0;
-        text-align: center;
-      }
-      nav {
-        display: flex;
-        justify-content: center;
-        background-color: #444;
-      }
-      nav a {
-        color: white;
-        padding: 14px 20px;
-        text-decoration: none;
-        text-align: center;
-      }
-      nav a:hover {
-        background-color: #555;
-      }
-      .container {
-        padding: 2rem;
-        max-width: 900px;
-        margin: 0 auto;
-      }
-      .content-section {
-        background: white;
-        padding: 2rem;
-        margin-top: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      footer {
-        text-align: center;
-        padding: 1rem 0;
-        background-color: #333;
-        color: white;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        margin-top: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1vh;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Innovate LLC</h1>
-    </header>
-
-    <nav>
-      <a href="/home">Home</a>
-      <a href="/about">About Us</a>
-      <a href="/contact">Contact</a>
-    </nav>
-
-    <div class="container">
-      <h2 style="text-align: center">About Our Company</h2>
-      <div class="content-section">
-        <h3>Our Mission</h3>
-        <p>
-          To empower businesses by providing cutting-edge technological
-          solutions that drive growth, efficiency, and success. We believe in
-          the power of innovation to transform industries and create a better
-          future.
-        </p>
-      </div>
-      <div class="content-section">
-        <h3>Our Team</h3>
-        <p>
-          We are a diverse team of passionate developers, designers, and
-          strategists dedicated to delivering excellence. Our collective
-          experience and collaborative spirit are the cornerstones of our
-          success.
-        </p>
-      </div>
-    </div>
-
-    <footer>
-      <p>
-        <i><i class="ri-copyright-line"></i></i> 2024 Innovate LLC. All rights
-        reserved.
-      </p>
-    </footer>
-  </body>
-</html>
-`);
-        res.end();
-
-    }
-    else if (url.toLowerCase() === '/contact') {
-        res.writeHead(200, { "Content-Type": "text/html" });
-        res.write(`<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Innovate LLC - Contact</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f9;
-        color: #333;
-      }
-      header {
-        background-color: #333;
-        color: white;
-        padding: 1rem 0;
-        text-align: center;
-      }
-      nav {
-        display: flex;
-        justify-content: center;
-        background-color: #444;
-      }
-      nav a {
-        color: white;
-        padding: 14px 20px;
-        text-decoration: none;
-        text-align: center;
-      }
-      nav a:hover {
-        background-color: #555;
-      }
-      .container {
-        padding: 2rem;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-      .contact-form {
-        background: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      .contact-form label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: bold;
-      }
-      .contact-form input,
-      .contact-form textarea {
-        width: 100%;
-        padding: 0.75rem;
-        margin-bottom: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
         box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
       }
-      .contact-form button {
-        background-color: #5b6c8c;
-        color: white;
-        padding: 1rem 1.5rem;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 1rem;
-      }
-      .contact-form button:hover {
-        background-color: #4a5a7b;
-      }
-      footer {
-        text-align: center;
-        padding: 1rem 0;
-        background-color: #333;
-        color: white;
-        position: relative;
-        bottom: 0;
+      html,
+      body {
+        height: 100%;
         width: 100%;
-        margin-top: 2rem;
+        background-color: #333;
+      }
+      header {
+        height: 100%;
+        width: 100%;
         display: flex;
-        justify-content: center;
         align-items: center;
-        gap: 1vh;
+        justify-content: center;
+        flex-direction: column;
+      }
+      nav {
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid white;
+      }
+      .left_nav_sec {
+        height: 100%;
+        width: 12%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+      .logo_div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 4vw;
+      }
+      .right_nav_sec {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .tags_div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5vh;
+        margin-left: 8vw;
+      }
+      .tag {
+        text-decoration: none;
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 700;
+        transition: 0.8s;
+      }
+      .tag:hover{
+        color: crimson;
+      }
+      
+
+      .landing_page {
+        height: calc(100% - 80px);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+      .left_home {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+        flex-direction: column;
+      }
+      .para_home {
+        font-size: 1.3rem;
+        font-weight: 500;
+        width: 90%;
+      }
+      .cta_home{
+        padding: 2vh 5vh;
+       border: 2px solid crimson;
+        border-radius: 5px;
+        background: transparent;
+        color: white;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: 0.8s;
+      }
+      .cta_home:hover{
+        background-color: #3f3e3e;
+      }
+       .right_home{
+        height: 100%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+      .img_div_home{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: 5vw;
       }
     </style>
   </head>
   <body>
     <header>
-      <h1>Innovate LLC</h1>
-    </header>
-
-    <nav>
-      <a href="/home">Home</a>
-      <a href="/about">About Us</a>
-      <a href="/contact">Contact</a>
-    </nav>
-
-    <div class="container">
-      <h2 style="text-align: center">Get In Touch</h2>
-      <div class="contact-form">
-        <form action="#">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
-
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
-
-          <button type="submit">Send Message</button>
-        </form>
+      <nav>
+        <div class="left_nav_sec">
+          <div class="logo_div">
+            <h2 class="logo">My_Tech</h2>
+          </div>
+        </div>
+        <div class="right_nav_sec">
+          <div class="tags_div">
+            <a href="/" class="tag">Default</a>
+            <a href="/contact" class="tag">Contact</a>
+            <a href="/about" class="tag">About_us</a>
+          </div>
+        </div>
+      </nav>
+      <div class="landing_page">
+        <div class="left_home">
+          <h1 class="heading_home">Welcome to My_Tech Industry</h1>
+          <p class="para_home">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+            voluptates dolore placeat dolor, facere expedita soluta optio
+            beatae, necessitatibus, commodi voluptatibus excepturi consectetur.
+            Aliquid, rem? Fugiat repellendus impedit eius quasi?
+          </p>
+          <button class="cta_home">More Info..</button>
+        </div>
+        <div class="right_home">
+          <div class="img_div_home">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1723849222657-e1e48a0a306e?q=80&w=1421&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="home_img"
+              height="300px"
+            />
+          </div>
+        </div>
       </div>
-    </div>
-
-    <footer>
-      <p><i class="ri-copyright-line"></i> 2024 Innovate LLC. All rights reserved.</p>
-    </footer>
+    </header>
   </body>
 </html>
 `)
         res.end();
 
     }
+    else if (url.toLowerCase() === '/about') {
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.write(`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About_us</title>
+    <style>   * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        background-color: #333;
+      }
+      header {
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      nav {
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid white;
+      }
+      .left_nav_sec {
+        height: 100%;
+        width: 12%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+      .logo_div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 4vw;
+      }
+      .right_nav_sec {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .tags_div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5vh;
+        margin-left: 8vw;
+      }
+      .tag {
+        text-decoration: none;
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 700;
+        transition: 0.8s;
+      }
+      .tag:hover{
+        color: crimson;
+      }
+      .about_sec{
+        height: calc(100% - 80px);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .upper_about_sec{
+        height: 15%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 5vh;
+      }
+      .upper_about_sec > h1{
+        font-size: 2rem;
+        color: white;
+        font-weight: 700;
+      }
+      .lower_about_sec{
+        height: 85%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        gap:2vh;
+      }
+      .cntnt_upr_div, .cntnt_lwr_div{
+        height: 35%;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 1px solid white;
+        border-radius: 10px;
+        gap: 2vh;
+      }
+      .hdng_upr_div, .hdng_lwr_div{
+        font-size: 2rem;
+        font-weight: 700;
+        width: 95%;
+      }
+      .cnt_upr_div, .cnt_lwr_div{
+        width: 95%;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      </style>
+</head>
+<body>
+    <header>
+      <nav>
+        <div class="left_nav_sec">
+          <div class="logo_div">
+            <h2 class="logo">My_Tech</h2>
+          </div>
+        </div>
+        <div class="right_nav_sec">
+          <div class="tags_div">
+            <a href="/home" class="tag">Home</a>
+            <a href="/" class="tag">Default</a>
+            <a href="/contact" class="tag">Contact</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="about_sec">
+        <div class="upper_about_sec">
+            <h1>About Our Company</h1>
+        </div>
+        <div class="lower_about_sec">
+            <div class="cntnt_upr_div">
+                <h2 class="hdng_upr_div">Our Mission</h2>
+                <p class="cnt_upr_div">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste obcaecati temporibus voluptatem voluptate deleniti ab ratione id atque reiciendis optio nihil pariatur expedita impedit sapiente esse consectetur quos, odit iusto neque ullam numquam totam mollitia!</p>
+            </div>
+            <div class="cntnt_lwr_div">
+                <h2 class="hdng_lwr_div">Our Team</h2>
+                <p class="cnt_lwr_div">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, obcaecati repudiandae? Aspernatur cumque culpa, voluptatibus dolores obcaecati officia laborum exercitationem rerum, facilis voluptas maiores nulla provident beatae in saepe unde architecto harum repellendus nisi incidunt?</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>`)
+        res.end();
+
+    }
+    else if (url.toLowerCase() === '/contact') {
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.write(`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <style>
+         * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        background-color: #333;
+      }
+      header {
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      nav {
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid white;
+      }
+      .left_nav_sec {
+        height: 100%;
+        width: 12%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+      .logo_div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 4vw;
+      }
+      .right_nav_sec {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .tags_div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5vh;
+        margin-left: 8vw;
+      }
+      .tag {
+        text-decoration: none;
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 700;
+        transition: 0.8s;
+      }
+      .tag:hover{
+        color: crimson;
+      }
+      .contact_section{
+        height: calc(100% - 80px);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .upper_contact{
+        height: 10%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cntc_page{
+        color: white;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+     .lower_contact{
+        height: 90%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     }
+     form{
+        height: 100%;
+        width: 50%;
+        border: 1px solid white;
+        display: flex;
+        padding: 4vh;
+        gap: 2vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 10px;
+     }
+     .username, .email, .message{
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-align: left;
+        width: 80%;
+     }
+     #username, #email, #msg{
+        height: 35px;
+        width: 80%;
+        border: none;
+        background-color: #c0bcbc;
+        border-radius: 10px;
+        outline: none;
+     }
+     .submit{
+        padding: 2vh 7vh;
+        border: 1px solid crimson;
+        border-radius: 5px ;
+        background: transparent;
+        color: white;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-top: 2vh;
+
+     }
+    </style>
+    
+</head>
+<body>
+      <header>
+      <nav>
+        <div class="left_nav_sec">
+          <div class="logo_div">
+            <h2 class="logo">My_Tech</h2>
+          </div>
+        </div>
+        <div class="right_nav_sec">
+          <div class="tags_div">
+            <a href="/home" class="tag">Home</a>
+            <a href="/" class="tag">Default</a>
+            <a href="/about" class="tag">About_us</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="contact_section">
+        <div class="upper_contact">
+            <h1 class="cntc_page">Get in Touch</h1>
+        </div>
+        <div class="lower_contact">
+            <form action="#">
+               <p class="username">Name</p>
+               <input type="text" name="" id="username" required>
+               <p class="email">Email</p>
+               <input type="email" name="" id="email">
+               <p class="message">Message</p>
+               <textarea name="" id="msg"></textarea>
+               <input type="submit" value="submit" class="submit">
+            </form>
+        </div>
+
+    </div>
+    
+</body>
+</html>`)
+        res.end();
+
+    }
     else if (url.toLowerCase() === '/') {
         res.writeHead(200, { "Content-Type": "text/html" });
-        res.write(`<html lang="en">
+        res.write(`<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Innovate LLC</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <title>Default Page</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
+      * {
         margin: 0;
         padding: 0;
-        background-color: #f4f4f9;
-        color: #333;
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        background-color: #333;
       }
       header {
-        background-color: #333;
-        color: white;
-        padding: 1rem 0;
-        text-align: center;
-      }
-      nav {
-        display: flex;
-        justify-content: center;
-        background-color: #444;
-      }
-      nav a {
-        color: white;
-        padding: 14px 20px;
-        text-decoration: none;
-        text-align: center;
-      }
-      nav a:hover {
-        background-color: #555;
-      }
-      .welcome-container {
-        text-align: center;
-        padding: 5rem 2rem;
-      }
-      .welcome-container h1 {
-        font-size: 3rem;
-        color: #333;
-      }
-      .welcome-container p {
-        font-size: 1.2rem;
-        color: #666;
-        margin-bottom: 2rem;
-      }
-      .cta-button {
-        background-color: #5b6c8c;
-        color: white;
-        padding: 1rem 2rem;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 1.1rem;
-        transition: background-color 0.3s ease;
-      }
-      .cta-button:hover {
-        background-color: #4a5a7b;
-      }
-      footer {
-        text-align: center;
-        padding: 1rem 0;
-        background-color: #333;
-        color: white;
-        position: absolute;
-        bottom: 0;
+        height: 80px;
         width: 100%;
         display: flex;
-        justify-content: center;
         align-items: center;
-        gap: 1vh;
+        justify-content: center;
+        flex-direction: column;
       }
+      nav {
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid white;
+      }
+      .left_nav_sec {
+        height: 100%;
+        width: 12%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+      .logo_div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 4vw;
+      }
+      .right_nav_sec {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .tags_div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5vh;
+        margin-left: 8vw;
+      }
+      .tag {
+        text-decoration: none;
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 700;
+        transition: 0.8s;
+      }
+      .tag:hover {
+        color: crimson;
+      }
+      .default_sec_div{
+        height: calc(100% - 80px);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        gap: 5vh;
+      }
+      .hdng_default{
+        font-size: 3rem;
+        font-weight: 700;
+      }
+      .para_default{
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #b9b8b8;
+      }
+      .btn_default{
+        padding: 2vh 4vh;
+        color: white;
+        font-weight: 700;
+        font-size: 1.5rem;
+        background: transparent;
+        border: 1px solid crimson;
+        border-radius: 10px;
+        transition: 0.8s;
+      }
+      .btn_default:hover{
+        background-color: #646464;
+      }
+      
     </style>
   </head>
   <body>
     <header>
-      <h1>Innovate LLC</h1>
+      <nav>
+        <div class="left_nav_sec">
+          <div class="logo_div">
+            <h2 class="logo">My_Tech</h2>
+          </div>
+        </div>
+        <div class="right_nav_sec">
+          <div class="tags_div">
+            <a href="/home" class="tag">Home</a>
+            <a href="/about" class="tag">About_us</a>
+            <a href="/contact" class="tag">Contact</a>
+          </div>
+        </div>
+      </nav>
     </header>
-
-    <nav>
-      <a href="/home">Home</a>
-      <a href="/about">About Us</a>
-      <a href="/contact">Contact</a>
-    </nav>
-
-    <div class="welcome-container">
-      <h1>Welcome to Innovate LLC</h1>
-      <p>
-        Your partner in building the future of technology, one solution at a
-        time.
-      </p>
-      <a href="/home" class="cta-button">Explore Our Services</a>
+    <div class="default_sec_div">
+      <h1 class="hdng_default">Welcome To My_Tech</h1>
+      <p class="para_default">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolor debitis, saepe quis provident eius.</p>
+      <button class="btn_default">Explore Our Services</button>
     </div>
-
-    <footer>
-      <p><i class="ri-copyright-line"></i> 2024 Innovate LLC. All rights reserved.</p>
-    </footer>
   </body>
 </html>
 `)
@@ -491,108 +689,58 @@ const app = http.createServer((req, res) => {
         res.writeHead(404, { "Content-Type": "text/html" });
         res.write(`<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Innovate LLC</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
+        * {
         margin: 0;
         padding: 0;
-        background-color: #f4f4f9;
-        color: #333;
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
       }
-      header {
+      html,
+      body {
+        height: 100%;
+        width: 100%;
         background-color: #333;
-        color: white;
-        padding: 1rem 0;
-        text-align: center;
       }
-      nav {
-        display: flex;
-        justify-content: center;
-        background-color: #444;
-      }
-      nav a {
-        color: white;
-        padding: 14px 20px;
-        text-decoration: none;
-        text-align: center;
-      }
-      nav a:hover {
-        background-color: #555;
-      }
-      .welcome-container {
-        text-align: center;
-        padding: 5rem 2rem;
-      }
-      .welcome-container h1 {
-        font-size: 3rem;
-        color: #333;
-      }
-      .welcome-container p {
-        font-size: 1.2rem;
-        color: #666;
-        margin-bottom: 2rem;
-      }
-      .cta-button {
-        background-color: #5b6c8c;
-        color: white;
-        padding: 1rem 2rem;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 1.1rem;
-        transition: background-color 0.3s ease;
-      }
-      .cta-button:hover {
-        background-color: #4a5a7b;
-      }
-      footer {
-        text-align: center;
-        padding: 1rem 0;
-        background-color: #333;
-        color: white;
-        position: absolute;
-        bottom: 0;
+      .not_found_ctnt{
+        height: 100%;
         width: 100%;
         display: flex;
-        justify-content: center;
         align-items: center;
-        gap: 1vh;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .nft_hdng{
+        font-size: 5rem;
+        color: white;
+        font-weight: 900;
+      }
+      .para_nft{
+        font-size: 1.5rem;
+        color: white;
+        font-weight: 500;
+      }
+      .para_nft > a{
+        text-decoration: none;
+        color: crimson;
       }
     </style>
-  </head>
-  <body>
-    <header>
-      <h1>Innovate LLC</h1>
-    </header>
-
-    <nav>
-      <a href="/home">Home</a>
-      <a href="/about">About Us</a>
-      <a href="/contact">Contact</a>
-    </nav>
-
-    <div class="welcome-container">
-      <h1>Welcome to Innovate LLC</h1>
-      <p>
-        Your partner in building the future of technology, one solution at a
-        time.
-      </p>
-      <a href="/home" class="cta-button">Explore Our Services</a>
+</head>
+<body>
+    <div class="not_found_ctnt">
+        <h1 class="nft_hdng">404</h1>
+        <p class="para_nft">Oops! The page you're looking for could not be found.</p>
+        <p class="para_nft">Go back to the <a href="/home">Homepage</a>.</p>
     </div>
-
-    <footer>
-      <p><i class="ri-copyright-line"></i> 2024 Innovate LLC. All rights reserved.</p>
-    </footer>
-  </body>
-</html>
-`)
+    
+</body>
+</html>`)
         res.end();
     }
 
